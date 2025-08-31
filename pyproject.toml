@@ -1,7 +1,7 @@
 [project]
 name = "fakegrpc"
 version = "0.1.0"
-description = "A fake gRPC server generator for gRPC based microservices"
+description = "A E2E testing framework for services based on gRPC"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -9,6 +9,8 @@ dependencies = [
   "grpclib==0.4.7",
   "python-dotenv",
 ]
+license = {text = "MIT"}
+authors = [{ name = "Shota Kono", email = "dqx1005@gmail.com" }]
 
 
 [build-system]
