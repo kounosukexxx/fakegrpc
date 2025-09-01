@@ -3,9 +3,9 @@ from dataclasses import dataclass
 
 from grpclib._typing import IServable
 
-from server.command import CommandRunner
-from server.fakegrpc.server import FakeServers
-from server.grpc import sync_wait_for_grpc_server_ready
+from fakegrpc.server.command import CommandRunner
+from fakegrpc.server.fakegrpc.server import FakeServers
+from fakegrpc.server.grpc import sync_wait_for_grpc_server_ready
 
 
 @dataclass

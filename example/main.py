@@ -11,7 +11,7 @@ from example.internal.infra.shipping_client import ShippingClient
 from example.internal.infra.warehouse_client import WarehouseClient
 from example.internal.server.health import HealthServer
 from example.internal.server.server import ShopServer
-from tid import grpc_propagator
+from fakegrpc.tid import grpc_propagator
 
 
 def new_grpc_services():

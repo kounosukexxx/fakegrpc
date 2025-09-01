@@ -6,7 +6,7 @@ import inspect
 from dataclasses import dataclass
 from typing import List, get_type_hints
 
-from .fake_server_template import (
+from fakegrpc.server.fakegrpc.fake_server_template import (
     FAKE_SERVER_TEMPLATE,
     METHOD_IMPLEMENTATION_TEMPLATE,
     SETTER_METHOD_TEMPLATE,

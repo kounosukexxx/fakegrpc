@@ -4,7 +4,7 @@ Generate fake server for Shipping service.
 """
 
 from example.api.shipping import v1 as shipping_v1
-from server.fakegrpc.fake_server_generator import TemplateConfig, generate
+from fakegrpc.server import TemplateConfig, generate
 
 
 def main():

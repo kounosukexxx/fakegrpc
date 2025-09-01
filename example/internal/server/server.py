@@ -4,7 +4,7 @@ from example.api.shop import v1
 from example.api.warehouse import v1 as warehouse_v1
 from example.internal.infra.shipping_client import ShippingClient
 from example.internal.infra.warehouse_client import WarehouseClient
-from tid import tid
+from fakegrpc.tid import tid
 
 
 class ShopServer(v1.ShopBase):

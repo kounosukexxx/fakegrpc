@@ -78,7 +78,7 @@ class ShippingStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "CreateShippingResponse":
         return await self._unary_unary(
             "/shipping.v1.Shipping/Create",
@@ -95,7 +95,7 @@ class ShippingStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "ShippingStatusResponse":
         return await self._unary_unary(
             "/shipping.v1.Shipping/Status",

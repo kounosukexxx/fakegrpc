@@ -5,7 +5,7 @@ Generate fake server for Shop service.
 
 from example.api.shop import v1 as shop_v1
 
-from server.fakegrpc.fake_server_generator import TemplateConfig, generate
+from fakegrpc.server import TemplateConfig, generate
 
 
 def main():

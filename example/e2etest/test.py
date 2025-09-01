@@ -4,7 +4,7 @@ import grpclib
 import pytest
 from grpclib.const import Status
 
-from tid import tid
+from fakegrpc.tid import tid
 
 
 class Test:

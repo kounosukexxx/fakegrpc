@@ -1,6 +1,6 @@
 [project]
 name = "fakegrpc"
-version = "0.1.1"
+version = "0.1.2"
 description = "A E2E testing framework for services based on gRPC"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -26,7 +26,7 @@ dev-dependencies = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["."]
+packages = ["src/fakegrpc"]
 
 [tool.black]
 line-length = 88

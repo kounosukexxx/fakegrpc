@@ -140,7 +140,7 @@ class ShopStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "ListProductInventoriesResponse":
         return await self._unary_unary(
             "/shop.v1.Shop/ListProductInventories",
@@ -157,7 +157,7 @@ class ShopStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "CreateOrderResponse":
         return await self._unary_unary(
             "/shop.v1.Shop/CreateOrder",
@@ -174,7 +174,7 @@ class ShopStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "GetShippingStatusResponse":
         return await self._unary_unary(
             "/shop.v1.Shop/GetShippingStatus",

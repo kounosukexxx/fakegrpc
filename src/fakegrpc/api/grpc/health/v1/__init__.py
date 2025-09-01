@@ -59,7 +59,7 @@ class HealthStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None
+        metadata: Optional["MetadataLike"] = None,
     ) -> "HealthCheckResponse":
         return await self._unary_unary(
             "/grpc.health.v1.Health/Check",
@@ -76,7 +76,7 @@ class HealthStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None
+        metadata: Optional["MetadataLike"] = None,
     ) -> "HealthListResponse":
         return await self._unary_unary(
             "/grpc.health.v1.Health/List",
@@ -93,7 +93,7 @@ class HealthStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None
+        metadata: Optional["MetadataLike"] = None,
     ) -> AsyncIterator[HealthCheckResponse]:
         async for response in self._unary_stream(
             "/grpc.health.v1.Health/Watch",

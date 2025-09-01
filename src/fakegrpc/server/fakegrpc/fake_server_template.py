@@ -9,9 +9,9 @@ Fake gRPC server implementation for {service_name} service.
 """
 
 from typing import Optional, Callable
-from server.fakegrpc.fake_server_stub import GRPCServerStub
+from fakegrpc.server.fakegrpc.fake_server_stub import GRPCServerStub
 from {import_path} import {import_name}
-import tid.tid
+from fakegrpc.tid.tid import extract_tid
 
 
 class {service_name}Server({import_name}.{service_name}Base):
@@ -28,7 +28,7 @@ METHOD_IMPLEMENTATION_TEMPLATE = """
     async def {method_name}(
         self, {request_param_name}: {import_name}.{request_type_name}
     ) -> {import_name}.{response_type_name}:
-        current_tid = tid.tid.extract_tid()
+        current_tid = extract_tid()
         if not current_tid:
             raise ValueError("No TID found in context for {method_name}")
 

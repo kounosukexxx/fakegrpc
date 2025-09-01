@@ -116,7 +116,7 @@ class WarehouseStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "ListProductInventoriesResponse":
         return await self._unary_unary(
             "/warehouse.v1.Warehouse/ListProductInventories",
@@ -133,7 +133,7 @@ class WarehouseStub(betterproto.ServiceStub):
         *,
         timeout: Optional[float] = None,
         deadline: Optional["Deadline"] = None,
-        metadata: Optional["MetadataLike"] = None,
+        metadata: Optional["MetadataLike"] = None
     ) -> "ShipProductResponse":
         return await self._unary_unary(
             "/warehouse.v1.Warehouse/ShipProduct",

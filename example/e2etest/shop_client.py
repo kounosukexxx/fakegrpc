@@ -2,7 +2,7 @@ from grpclib.client import Channel
 
 from example.api.shop import v1 as shop_v1
 from example.e2etest.test import Test
-from tid import tid
+from fakegrpc.tid import tid
 
 
 def new_shop_client(t: Test, port: int):

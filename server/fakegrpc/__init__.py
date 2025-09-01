@@ -1,1 +1,0 @@
-"""FakeGRPC server implementation"""

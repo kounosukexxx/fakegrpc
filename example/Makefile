@@ -3,13 +3,13 @@ SERVICES = warehouse_v1 shipping_v1 shop_v1
 .PHONY: compile
 compile:
 	mkdir -p api
-	PATH="/Library/Frameworks/Python.framework/Versions/3.12/bin:$$PATH" protoc -I proto --python_betterproto_out=api $(shell find proto -name "*.proto")
+	cd .. && PATH="$$(uv run python -c 'import sys; print("/".join(sys.executable.split("/")[:-1]))'):$$PATH" protoc -I example/proto --python_betterproto_out=example/api $$(find example/proto -name "*.proto")
 
 .PHONY: genfakes
 genfakes: $(SERVICES)
 
 $(SERVICES):
-	cd .. && uv run example/scripts/$@.py > example/fakeservers/$@.py
+	cd .. && PYTHONPATH=.:src uv run example/scripts/$@.py > example/fakeservers/$@.py
 	@if command -v black >/dev/null 2>&1; then \
 		echo "Formatting generated code with black..."; \
 		black fakeservers/$@.py || true; \
@@ -17,8 +17,8 @@ $(SERVICES):
 
 .PHONY: run
 run:
-	cd .. && PYTHONUNBUFFERED=1 uv run example/main.py
+	cd .. && PYTHONPATH=.:src PYTHONUNBUFFERED=1 uv run example/main.py
 
 .PHONY: test
 test:
-	cd .. && uv run pytest example/e2etest/ -v -s --disable-warnings
+	cd .. && PYTHONPATH=.:src uv run pytest example/e2etest/ -v -s --disable-warnings

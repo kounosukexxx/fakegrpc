@@ -1,6 +1,6 @@
 from grpclib.events import RecvRequest
 
-from tid import tid
+from fakegrpc.tid import tid
 
 
 async def set_tid_in_context(event: RecvRequest):

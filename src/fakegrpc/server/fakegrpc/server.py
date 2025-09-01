@@ -5,7 +5,7 @@ from grpclib._typing import IServable
 from grpclib.events import RecvRequest, listen
 from grpclib.server import Server
 
-from tid import grpc_propagator
+from fakegrpc.tid import grpc_propagator
 
 
 class FakeServers:

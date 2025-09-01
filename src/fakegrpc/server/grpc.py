@@ -2,7 +2,7 @@ import asyncio
 
 from grpclib.client import Channel
 
-from example.api.grpc.health import v1 as health_v1
+from fakegrpc.api.grpc.health import v1 as health_v1
 
 
 def sync_wait_for_grpc_server_ready(port: int):

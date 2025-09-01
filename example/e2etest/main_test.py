@@ -5,8 +5,8 @@ from dotenv import load_dotenv
 from pytest_subtests import SubTests
 
 from example.fakeservers import warehouse_v1
-from server.e2etest import E2ETestExecutor
-from server.port import find_free_port
+from fakegrpc.server.e2etest import E2ETestExecutor
+from fakegrpc.server.port import find_free_port
 
 # なぜか E2ETestCase._on_pytest で self.xxx_server として初期化すると、テストから参照したとき runtime error になるのでここで初期化
 fake_warehouse_server = warehouse_v1.WarehouseServer()
