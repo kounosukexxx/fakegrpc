@@ -40,7 +40,12 @@ class E2ETestExecutor:
         fake_servers_thread.daemon = True
         fake_servers_thread.start()
 
-        sync_wait_for_grpc_server_ready(target_server_port)
+        try:
+            sync_wait_for_grpc_server_ready(target_server_port)
+        except Exception as e:
+            target_server_runner.print_stdout()
+            raise Exception("sync_wait_for_grpc_server_ready failed") from e
+
         return cls(
             target_server_runner=target_server_runner,
             fake_servers=fake_servers,
