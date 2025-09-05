@@ -2,7 +2,6 @@ import os
 
 import pytest
 from dotenv import load_dotenv
-from pytest_subtests import SubTests
 
 from example.fakeservers import warehouse_v1
 from fakegrpc.server.e2etest import E2ETestExecutor
@@ -14,7 +13,7 @@ fake_server_port = find_free_port([])
 target_server_port = find_free_port([fake_server_port])
 
 
-@pytest.mark.anyio
+@pytest.mark.asyncio
 class E2ETestCase:
     @pytest.fixture(scope="session", autouse=True)
     def _on_pytest(self):
@@ -42,18 +41,3 @@ class E2ETestCase:
         yield
 
         executor.stop_servers()
-
-    @pytest.fixture(scope="function", autouse=True)
-    async def _on_file_test(self):
-        """
-        pytest ファイル毎で起動時に実行される generator.
-        - 中身が空でも async にしておくことで、テストが event loop 内で実行されるようになる。
-            これがないと、 grpclib の Channel 作成時にエラーになってしまうので注意。
-        """
-
-        yield
-
-    @pytest.fixture(autouse=True)
-    async def _on_function(self, subtests: SubTests):
-        self.subtests = subtests
-        yield

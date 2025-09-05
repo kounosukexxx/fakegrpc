@@ -54,9 +54,4 @@ class E2ETestExecutor:
 
     def stop_servers(self):
         self.target_server_runner.print_stdout()
-
-        # 本当はこれなくても良いはず
-        self.fake_servers.close()
-        self.fake_servers_thread.join()
-
-        # target server はちょっと面倒なので daemon thread 強制終了
+        # ちょっと面倒なので daemon thread 強制終了
